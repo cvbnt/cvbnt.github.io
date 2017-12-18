@@ -11,27 +11,26 @@ exclude_from_search: true
 	<h1>Search: {{ site.title }}</h1>
 </header>
 
-<div id="search">
-	<form action="/search" method="get">
-		<input type="text" id="search-query" name="q" placeholder="Search" autocomplete="on">
-	</form>
+<div id="search-container">
+  <input type="text" id="search-input" placeholder="search...">
+  <ul id="results-container"></ul>
+
 </div>
+<!-- script pointing to jekyll-search.js -->
+<script 
 
-<section id="search-results" style="display: none;">
-	<h1>Search Results</h1>
-	<div class="entries">
-	</div>
-</section>
-
-{% raw %}
-<script id="search-results-template" type="text/mustache">
-	{{#entries}}
-	<article>
-		<h3>
-			{{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
-			- <a href="{{url}}">{{title}}</a>
-		</h3>
-	</article>
-	{{/entries}}
+src="{{ site.baseurl }}/js/simple-jekyll-search.min.js">
+	
 </script>
-{% endraw %}
+<script>
+SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: '没有搜索到文章',
+    limit: 20,
+    fuzzy: false
+  })
+</script>
+
