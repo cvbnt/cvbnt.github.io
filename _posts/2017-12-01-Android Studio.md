@@ -6,6 +6,7 @@ layout: post
 title: Application Debug  
 date: 2017-12-01 09:00:00 +0800  
 categories: AS  
+search：true
 ---  
 
 ## Android Studio配置
