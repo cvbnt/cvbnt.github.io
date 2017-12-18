@@ -1,18 +1,8 @@
 # main links
 main:
-  - title: "Support"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: Search
     url: /search/
-    
-  - title: Resume
-    url: /resume/
-
   - title: "Posts Archive"
     url: /posts/
-
-  - title: "Tag Archive"
-    url: /tags/
-
-  - title: "Category Archive"
-    url: /categories/
+  - title: "Support"
+    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
