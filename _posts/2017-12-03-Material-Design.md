@@ -117,7 +117,8 @@ android:label="@string/app_name"
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app=http://schemas.android.com/apk/res-auto             //添加以保证向下兼容    
+<menu xmlns:android="http://schemas.android.com/apk/res/android"  
+  xmlns:app=http://schemas.android.com/apk/res-auto             //添加以保证向下兼容    
                                            >    
   <item    
         android:id="@+id/backup"    
@@ -260,7 +261,8 @@ compile 'com.android.support:design:26.0.0-alpha1'
 res/menu文件夹下创建nav_menu.xml文件
 
 ```xml
-<?xml version="1.0" encoding="utf-8"?><menu xmlns:android="http://schemas.android.com/apk/res/android">    
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">    
   <group android:checkableBehavior="single">        
     <item            
           android:id="@+id/nav_call"            
@@ -333,7 +335,9 @@ res/layout文件夹下创建nav_header.xml
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto"    
+<android.support.v4.widget.DrawerLayout
+ xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"    
    xmlns:tools="http://schemas.android.com/tools"    
    android:id="@+id/drawer_layout"    
    android:layout_width="match_parent"    
@@ -392,7 +396,9 @@ protected void onCreate(Bundle savedInstanceState) {
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto"    
+<android.support.v4.widget.DrawerLayout 
+xmlns:android="http://schemas.android.com/apk/res/android"  
+  xmlns:app="http://schemas.android.com/apk/res-auto"    
    xmlns:tools="http://schemas.android.com/tools"    
    android:id="@+id/drawer_layout"    
    android:layout_width="match_parent"    
@@ -494,7 +500,8 @@ fab.setOnClickListener(new View.OnClickListener() {
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout 
+xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
@@ -552,7 +559,10 @@ compile 'com.github.bumptech.glide:glide:4.0.0-RC1'
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto"                                                xmlns:tools="http://schemas.android.com/tools"    
+<android.support.v4.widget.DrawerLayout 
+xmlns:android="http://schemas.android.com/apk/res/android"   
+ xmlns:app="http://schemas.android.com/apk/res-auto"                                             
+   xmlns:tools="http://schemas.android.com/tools"    
    android:id="@+id/drawer_layout"    
    android:layout_width="match_parent"    
    android:layout_height="match_parent"    
@@ -566,9 +576,12 @@ compile 'com.github.bumptech.glide:glide:4.0.0-RC1'
    android:layout_width="match_parent"    
    android:layout_height="?attr/actionBarSize"    
    android:background="?attr/colorPrimary"    
-   android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"                                      app:popupTheme="@style/ThemeOverlay.AppCompat.Light"    />    <android.support.v7.widget.RecyclerView            //让RecyclerView占满整个空间                            android:layout_width="match_parent"        
+   android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"                                   
+      app:popupTheme="@style/ThemeOverlay.AppCompat.Light"    />   
+    <android.support.v7.widget.RecyclerView            //让RecyclerView占满整个空间                            android:layout_width="match_parent"        
          android:layout_height="match_parent"        
-         android:id="@+id/recycle_view"         />       //    <android.support.design.widget.FloatingActionButton        
+         android:id="@+id/recycle_view"         />       //   
+          <android.support.design.widget.FloatingActionButton        
          android:id="@+id/fab"        
          android:layout_width="wrap_content"        
          android:layout_height="wrap_content"        
@@ -610,7 +623,9 @@ public class Fruit {
 3、为RecyclerView指定自定义布局CardView,新建fruit_item.xml
 
 ```xml
-<?xml version="1.0" encoding="utf-8"?><android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto"    
+<?xml version="1.0" encoding="utf-8"?><android.support.v7.widget.CardView 
+xmlns:android="http://schemas.android.com/apk/res/android"   
+ xmlns:app="http://schemas.android.com/apk/res-auto"    
  android:layout_width="match_parent"                                                                android:layout_height="wrap_content"    
  android:layout_margin="5dp"    
  app:cardCornerRadius="4dp"    >    
@@ -645,7 +660,7 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
     Fruit fruit=mFruitList.get(position);                           
     holder.fruitName.setText(fruit.getName());        
     Glide.with(mContext).load(fruit.getImageId()).into(holder.fruitImage);       //和之前的FruitAdapter几乎一样，但使用Glide加载水果图片    
-  }                           //Glide.with()方法传入一个Context,Activity,Fragment参数，调用load()方法加载图片，into()方法将图片设置到具体的ImageView    
+  }  //Glide.with()方法传入一个Context,Activity,Fragment参数，调用load()方法加载图片，into()方法将图片设置到具体的ImageView    
   @Override    
   public int getItemCount() {        
     return mFruitList.size();    
@@ -668,7 +683,8 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
     if(mContext==null){            
       mContext=parent.getContext();        
     }        
-    View view= LayoutInflater.from(mContext).inflate(R.layout.fruit_item,parent,false);        return new ViewHolder(view);    
+    View view= LayoutInflater.from(mContext).inflate(R.layout.fruit_item,parent,false);       
+     return new ViewHolder(view);    
   }
 }
 ```
@@ -780,50 +796,61 @@ AppBarLayout为是垂直方向的LinearLayout
 1、解决RecyclerView覆盖toolbar的问题
 
 ```xml
-<?xml version="1.0" encoding="utf-8"?><android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto"    xmlns:tools="http://schemas.android.com/tools"    
+<?xml version="1.0" encoding="utf-8"?><android.support.v4.widget.DrawerLayout 
+ xmlns:android="http://schemas.android.com/apk/res/android"    
+ xmlns:app="http://schemas.android.com/apk/res-auto"    
+ xmlns:tools="http://schemas.android.com/tools"    
  android:id="@+id/drawer_layout"    
  android:layout_width="match_parent"    
  android:layout_height="match_parent"    
  tools:openDrawer="start">
   <android.support.design.widget.CoordinatorLayout    
- android:id="@+id/frame"    
- android:layout_width="match_parent"    
- android:layout_height="wrap_content">   
-  <android.support.design.widget.AppBarLayout   //将Toolbar放置在AppBarLayout里                      android:layout_width="match_parent"        
- android:layout_height="wrap_content">  
+    android:id="@+id/frame"    
+    android:layout_width="match_parent"    
+    android:layout_height="wrap_content">   
+  <android.support.design.widget.AppBarLayout //将Toolbar放置在AppBarLayout里                                                  
+     android:layout_width="match_parent"        
+     android:layout_height="wrap_content">  
   <android.support.v7.widget.Toolbar    
- android:id="@+id/toolbar"    
- android:layout_width="match_parent"    
- android:layout_height="?attr/actionBarSize"   
- android:background="?attr/colorPrimary"    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"        app:layout_scrollFlags="scroll|enterAlways|snap"    />    </android.support.design.widget.AppBarLayout>  //    
+     android:id="@+id/toolbar"    
+     android:layout_width="match_parent"    
+     android:layout_height="?attr/actionBarSize"   
+     android:background="?attr/colorPrimary"    
+     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"    
+     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"        
+     app:layout_scrollFlags="scroll|enterAlways|snap"    />    
+ </android.support.design.widget.AppBarLayout>  //    
     <android.support.v7.widget.RecyclerView        
        android:layout_width="match_parent"       
        android:layout_height="match_parent"        
        android:id="@+id/recycle_view"                                                                    app:layout_behavior="@string/appbar_scrolling_view_behavior" //RecyclerView使用app:layout_behaviour指定布局行为        />    
     <android.support.design.widget.FloatingActionButton        
-       android:id="@+id/fab"       
-       android:layout_width="wrap_content"       
-       android:layout_height="wrap_content"       
-       android:layout_gravity="bottom|end"     
-       android:layout_margin="40dp"       
-       app:elevation="8dp"     
-       app:fabSize="normal"       
-       app:srcCompat="@drawable/ic_add_white_48dp" />
+        android:id="@+id/fab"       
+        android:layout_width="wrap_content"       
+        android:layout_height="wrap_content"       
+        android:layout_gravity="bottom|end"     
+        android:layout_margin="40dp"       
+        app:elevation="8dp"     
+        app:fabSize="normal"       
+        app:srcCompat="@drawable/ic_add_white_48dp" />
   </android.support.design.widget.CoordinatorLayout>
   <android.support.design.widget.NavigationView     
-       android:id="@+id/nav_view"      
-       android:layout_width="match_parent"  
-       android:layout_height="match_parent"      
-       android:layout_gravity="start"     
-       app:menu="@menu/nav_menu"     
-       app:headerLayout="@layout/nav_header"        />
+        android:id="@+id/nav_view"      
+        android:layout_width="match_parent"  
+        android:layout_height="match_parent"      
+        android:layout_gravity="start"     
+        app:menu="@menu/nav_menu"     
+        app:headerLayout="@layout/nav_header"        />
 </android.support.v4.widget.DrawerLayout>
 ```
 
 2、向上滚动让Toolbar自动消失
 
 ```xml
-<?xml version="1.0" encoding="utf-8"?><android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto"    xmlns:tools="http://schemas.android.com/tools"    
+<?xml version="1.0" encoding="utf-8"?><android.support.v4.widget.DrawerLayout 
+ xmlns:android="http://schemas.android.com/apk/res/android"    
+ xmlns:app="http://schemas.android.com/apk/res-auto"    
+ xmlns:tools="http://schemas.android.com/tools"    
  android:id="@+id/drawer_layout"   
  android:layout_width="match_parent"  
  android:layout_height="match_parent"  
@@ -839,12 +866,16 @@ AppBarLayout为是垂直方向的LinearLayout
       android:id="@+id/toolbar" 
       android:layout_width="match_parent"  
       android:layout_height="?attr/actionBarSize"  
-      android:background="?attr/colorPrimary"                                                           android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"                                       app:popupTheme="@style/ThemeOverlay.AppCompat.Light"                                               app:layout_scrollFlags="scroll|enterAlways|snap"     /> //scroll表示RecyclerView向上滚动，Toolbar自动隐藏，enterAlyways表示向下滚动则Toolbar一直显示，snap表示当Toolbar不完全显示则根据滚动距离自动选择隐藏和显示    
+      android:background="?attr/colorPrimary"                                                           
+      android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"                                     
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"                                               app:layout_scrollFlags="scroll|enterAlways|snap"     /> 
+  //scroll表示RecyclerView向上滚动，Toolbar自动隐藏，enterAlyways表示向下滚动则Toolbar一直显示，snap表示当Toolbar不完全显示则根据滚动距离自动选择隐藏和显示    
     </android.support.design.widget.AppBarLayout> 
     <android.support.v7.widget.RecyclerView    
       android:layout_width="match_parent"   
       android:layout_height="match_parent"    
-      android:id="@+id/recycle_view"                                                                     app:layout_behavior="@string/appbar_scrolling_view_behavior"          />    <android.support.design.widget.FloatingActionButton  
+      android:id="@+id/recycle_view"                                                                     app:layout_behavior="@string/appbar_scrolling_view_behavior"          />   
+    <android.support.design.widget.FloatingActionButton  
       android:id="@+id/fab"        
       android:layout_width="wrap_content"     
       android:layout_height="wrap_content"        
@@ -869,7 +900,10 @@ AppBarLayout为是垂直方向的LinearLayout
 1、编辑布局
 
 ```xml
-<?xml version="1.0" encoding="utf-8"?><android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto"    xmlns:tools="http://schemas.android.com/tools"    
+<?xml version="1.0" encoding="utf-8"?><android.support.v4.widget.DrawerLayout 
+ xmlns:android="http://schemas.android.com/apk/res/android"    
+ xmlns:app="http://schemas.android.com/apk/res-auto"    
+ xmlns:tools="http://schemas.android.com/tools"    
  android:id="@+id/drawer_layout"    
  android:layout_width="match_parent"    
  android:layout_height="match_parent"    
@@ -885,13 +919,21 @@ AppBarLayout为是垂直方向的LinearLayout
       android:id="@+id/toolbar"  
       android:layout_width="match_parent"   
       android:layout_height="?attr/actionBarSize" 
-      android:background="?attr/colorPrimary"                                                           android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"        b                             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"                                               app:layout_scrollFlags="scroll|enterAlways|snap"    />    </android.support.design.widget.AppBarLayout>
-    <android.support.v4.widget.SwipeRefreshLayout                   //将RecyclerView包含进去             android:layout_width="match_parent"    
+      android:background="?attr/colorPrimary"                                                       
+          android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"   
+          app:popupTheme="@style/ThemeOverlay.AppCompat.Light"                                               app:layout_scrollFlags="scroll|enterAlways|snap"  
+            />   
+         </android.support.design.widget.AppBarLayout>
+    <android.support.v4.widget.SwipeRefreshLayout                  //将RecyclerView包含进去             android:layout_width="match_parent"    
       android:layout_height="match_parent"     
-      android:id="@+id/swipe_refresh"                                                                   app:layout_behavior="@string/appbar_scrolling_view_behavior">    <android.support.v7.widget.RecyclerView  
+      android:id="@+id/swipe_refresh"                                                                   app:layout_behavior="@string/appbar_scrolling_view_behavior">   
+       <android.support.v7.widget.RecyclerView  
       android:layout_width="match_parent"    
       android:layout_height="match_parent"    
-      android:id="@+id/recycle_view"                                                                     app:layout_behavior="@string/appbar_scrolling_view_behavior"        />    </android.support.v4.widget.SwipeRefreshLayout>                 //    <android.support.design.widget.FloatingActionButton     
+      android:id="@+id/recycle_view"                                                                     app:layout_behavior="@string/appbar_scrolling_view_behavior"      
+        />    
+        </android.support.v4.widget.SwipeRefreshLayout>                 // 
+       <android.support.design.widget.FloatingActionButton     
       android:id="@+id/fab"        
       android:layout_width="wrap_content"    
       android:layout_height="wrap_content"        
@@ -964,7 +1006,8 @@ public class MainActivity extends AppCompatActivity {
     fab.setOnClickListener(new View.OnClickListener() {           
       @Override       
       public void onClick(View view) {           
-        Snackbar.make(view,"Data deleted",Snackbar.LENGTH_SHORT)                        .setAction("Undo", new View.OnClickListener() {         
+        Snackbar.make(view,"Data deleted",Snackbar.LENGTH_SHORT)                  
+              .setAction("Undo", new View.OnClickListener() {         
           @Override               
           public void onClick(View view) {                                
             Toast.makeText(MainActivity.this,"Data restored",Toast.LENGTH_SHORT).show();                            }            
@@ -1009,7 +1052,9 @@ CollapsingToolbarLayout必须是AppBarLayout的子布局，而AppBarLayout必须
 1、 新建activity_fruit.xml
 
 ```xml
-<?xml version="1.0" encoding="utf-8"?><android.support.design.widget.CoordinatorLayout                   //最外层布局是CoordinatorLayout                                                               xmlns:android="http://schemas.android.com/apk/res/android"                                         xmlns:app="http://schemas.android.com/apk/res-auto"   
+<?xml version="1.0" encoding="utf-8"?><android.support.design.widget.CoordinatorLayout                                         //最外层布局是CoordinatorLayout                                                              
+ xmlns:android="http://schemas.android.com/apk/res/android"                                         
+ xmlns:app="http://schemas.android.com/apk/res-auto"   
 android:layout_width="match_parent"   
 android:layout_height="match_parent">  
   <android.support.design.widget.AppBarLayout                    //第二层布局是AppBarLayout       
@@ -1052,12 +1097,13 @@ android:layout_height="match_parent">
           android:layout_margin="10dp"/>    
       </android.support.v7.widget.CardView>   
     </LinearLayout>
-  </android.support.v4.widget.NestedScrollView>    <android.support.design.widget.FloatingActionButton          //悬浮按钮，和AppBarLayout平级，        android:layout_width="wrap_content"      
+  </android.support.v4.widget.NestedScrollView>   
+   <android.support.design.widget.FloatingActionButton          //悬浮按钮，和AppBarLayout平级，        android:layout_width="wrap_content"      
  android:layout_height="wrap_content"  
  android:layout_margin="16dp"      
  android:src="@drawable/ic_comment"  
- app:layout_anchor="@id/appBar"                           //anchor属性为锚点，设置为AppBarLayout意思为会出现在标题栏区域内      
- app:layout_anchorGravity="bottom|end"/>                  //定位在右下角    </android.support.design.widget.CoordinatorLayout>
+ app:layout_anchor="@id/appBar"        //anchor属性为锚点，设置为AppBarLayout意思为会出现在标题栏区域内      
+ app:layout_anchorGravity="bottom|end"/>   //定位在右下角    </android.support.design.widget.CoordinatorLayout>
 ```
 
 2、新建FruitActivity.java
@@ -1137,14 +1183,18 @@ public ViewHolder onCreateViewHolder(ViewGroup parent,int viewType){
 1、修改activity_fruit.xml,需要将ImageView融合到状态栏里，则必须将ImageView及它的父布局的android:fitsSystemWindows属性设置为true
 
 ```xml
-<?xml version="1.0" encoding="utf-8"?><android.support.design.widget.CoordinatorLayout    xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto" 
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout    
+xmlns:android="http://schemas.android.com/apk/res/android"    
+xmlns:app="http://schemas.android.com/apk/res-auto" 
 android:layout_width="match_parent"   
 android:layout_height="match_parent"  
-android:fitsSystemWindows="true">                                    //    <android.support.design.widget.AppBarLayout    
+android:fitsSystemWindows="true">                  //    <android.support.design.widget.AppBarLayout    
 android:layout_width="match_parent"     
 android:layout_height="250dp"    
 android:id="@+id/appBar"    
-android:fitsSystemWindows="true">                                //        <android.support.design.widget.CollapsingToolbarLayout            android:layout_width="match_parent"     
+android:fitsSystemWindows="true">                                //       
+ <android.support.design.widget.CollapsingToolbarLayout            android:layout_width="match_parent"     
 android:layout_height="match_parent"      
 android:id="@+id/collapsing_toolbar"           
 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" 
@@ -1158,10 +1208,12 @@ app:layout_scrollFlags="scroll|exitUntilCollapsed"                              
              app:layout_collapseMode="parallax"       
              android:fitsSystemWindows="true"/>                       //         
   <android.support.v7.widget.Toolbar        
-                                     android:id="@+id/toolbar"    
-                                     android:layout_width="match_parent"     
-                                     android:layout_height="?attr/actionBarSize"      
-                                     app:layout_collapseMode="pin"/>        </android.support.design.widget.CollapsingToolbarLayout>    </android.support.design.widget.AppBarLayout> 
+                  android:id="@+id/toolbar"    
+                  android:layout_width="match_parent"     
+                  android:layout_height="?attr/actionBarSize"      
+                  app:layout_collapseMode="pin"/>        
+</android.support.design.widget.CollapsingToolbarLayout>  
+ </android.support.design.widget.AppBarLayout> 
   <android.support.v4.widget.NestedScrollView     
                   android:layout_width="match_parent"       
                   android:layout_height="match_parent"       
@@ -1171,13 +1223,13 @@ app:layout_scrollFlags="scroll|exitUntilCollapsed"                              
                   android:layout_height="wrap_content" 
                   android:orientation="vertical">     
       <android.support.v7.widget.CardView      
-                                          android:layout_width="match_parent"                
-                                          android:layout_height="wrap_content"     
-                                          android:layout_marginBottom="15dp"                
-                                          android:layout_marginLeft="15dp"     
-                                          android:layout_marginRight="15dp"               
-                                          android:layout_marginTop="35dp"        
-                                          app:cardCornerRadius="4dp">           
+                  android:layout_width="match_parent"                
+                  android:layout_height="wrap_content"     
+                  android:layout_marginBottom="15dp"                
+                  android:layout_marginLeft="15dp"     
+                  android:layout_marginRight="15dp"               
+                  android:layout_marginTop="35dp"        
+                  app:cardCornerRadius="4dp">           
         <TextView               
                   android:layout_width="wrap_content"         
                   android:layout_height="wrap_content"      
@@ -1185,7 +1237,8 @@ app:layout_scrollFlags="scroll|exitUntilCollapsed"                              
                   android:layout_margin="10dp"/>       
       </android.support.v7.widget.CardView>      
     </LinearLayout>   
-  </android.support.v4.widget.NestedScrollView>    <android.support.design.widget.FloatingActionButton    
+  </android.support.v4.widget.NestedScrollView>    
+  <android.support.design.widget.FloatingActionButton    
     android:layout_width="wrap_content"  
     android:layout_height="wrap_content"     
     android:layout_margin="16dp"    
