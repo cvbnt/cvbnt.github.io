@@ -1,4 +1,3 @@
-
 ---
 layout: post  
 title: ConstraintLayout  
@@ -17,5 +16,10 @@ android:layout_marginBottom="16dp"
 app:layout_constraintBottom_toBottomOf="parent"
 ```
 constraintBottom代表顶部约束，toTopof代表链接到父组件顶部
+
+## 转换
+
+![Convert](https://cvbnt.github.io/assets/images/ConstrainLayout/Convert.PNG)
+
 **Markdown**
 *Awesome*

@@ -7,7 +7,7 @@ categories: AS RecycleView
 --- 
 ## 1、添加依赖
 ```XML
-compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
+implementation 'com.android.support:recyclerview-v7:27.0.2'
 ```
 ## 2、修改activity_main.xml代码。添加RecyclerView
 ```XML

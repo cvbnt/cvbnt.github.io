@@ -258,8 +258,4 @@ locale: "zh-CN"
 search: true
 teaser: /assets/images/1.png
 teaser: /assets/images/Android Studio.png
-site.search: true
-lunr_search:
-   js_dir: "assets/js/lunr"
-   min_length: 3
 
