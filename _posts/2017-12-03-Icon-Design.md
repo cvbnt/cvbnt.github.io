@@ -1,4 +1,3 @@
-
 ---
 
 layout: post  
@@ -19,7 +18,7 @@ categories: AS
 
 右键drawable目录，New-Image Asset
 
-![ImageAsset](https://cvbnt.github.io/cvbnt.github.io/assets/images/Icon Design/AsswtStudio.PNG)
+![ImageAsset](https://cvbnt.github.io/cvbnt.github.io/assets/images/Icon Design/AssetStudio.PNG)
 
 
 

@@ -288,6 +288,8 @@ public CrimeHolder(LayoutInflater inflater,ViewGroup parent){
 public void onClick(View view) {    
 	Toast.makeText(getActivity(),mCrime.getTitle()+"clicked!",Toast.LENGTH_SHORT).show();
 }
+
+![点击事件](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0327/2647.html)
 ```
 **Markdown**
 *Awesome*
