@@ -1,5 +1,4 @@
-
----   
+---
 header:  
   teaser: /assets/images/Android Studio.png  
 layout: post  
@@ -46,5 +45,37 @@ search：true
 1、Settings->Edtior->Code Style->Java->Code Generation   
 2、Naming，Field:name prefix:m，static Field:name prefix:s  
 
-**Markdown**
+## 重启虚拟机
+
+控制台adb reboot
+
+## 加大Android Studio利用运存
+
+1、进入Android Studio所在文件夹，/bin
+
+找到studio64.vmoptions文件，编辑成
+
+```
+-Xms2048m
+-Xmx2048m
+-XX:ReservedCodeCacheSize=1024m
+-XX:+UseConcMarkSweepGC
+-XX:SoftRefLRUPolicyMSPerMB=50
+-Dsun.io.useCanonCaches=false
+-Djava.net.preferIPv4Stack=true
+-Djna.nosys=true
+-Djna.boot.library.path=
+
+-da
+```
+
+2、Android Studio显示Heap占用
+
+Settings->Appearance，打开 Show memory indicator 选项
+
+3、生效
+
+File--Invalidate caches/restart
+
+Markdown**
 *Awesome*

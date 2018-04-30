@@ -1,4 +1,3 @@
-
 ---
 
 layout: post  
@@ -169,5 +168,137 @@ Notification notification=new NotificatiobCompat.Builder(this)
   .build();
 ```
 
-Markdown**
+## 自定义通知布局
+
+自定义一个通知布局，通知布局仅接受以下组件(由RemoteViews决定)
+
+`RemoteViews` 仅限于支持以下布局：
+
+- `AdapterViewFlipper`
+- `FrameLayout`
+- `GridLayout`
+- `GridView`
+- `LinearLayout`
+- `ListView`
+- `RelativeLayout`
+- `StackView`
+- `ViewFlipper`
+
+以下小部件：
+
+- `AnalogClock`
+- `Button`
+- `Chronometer`
+- `ImageButton`
+- `ImageView`
+- `ProgressBar`
+- `TextClock`
+- `TextView`
+
+
+不支持这些类的子类
+
+navigation_play.xml
+
+```xml
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="100dp"
+    android:padding="10dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/navigation_song"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:text="@string/not_play"
+                android:gravity="center"
+                android:textSize="20sp"
+                />
+            <TextView
+                android:id="@+id/navigation_singer"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/navigation_previous"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/ic_skip_previous_black" />
+
+            <ImageButton
+                android:id="@+id/navigation_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/ic_play_arrow_black" />
+
+            <ImageButton
+                android:id="@+id/navigation_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/ic_skip_next_black" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
+```
+
+![navigaiton_play](https://cvbnt.github.io/cvbnt.github.io/assets/images/Navigation/navigation_play.PNG)
+
+逻辑
+
+```java
+Notification notification;
+    Notification.Builder builder;
+    NotificationManager manager;
+    RemoteViews mRemoteViews;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        context=this;
+        mRemoteViews=new RemoteViews(getPackageName(),R.layout.navigation_play)；                     mRemoteViews.setImageViewResource(R.id.navigation_previous,R.drawable.ic_skip_previous_black);
+        mRemoteViews.setImageViewResource(R.id.navigation_play,R.drawable.ic_play_arrow_black);
+        mRemoteViews.setImageViewResource(R.id.navigation_next,R.drawable.ic_skip_next_black);
+        mRemoteViews.setTextViewText(R.id.navigation_song,"未播放");
+        builder=new Notification.Builder(this)
+                .setContent(mRemoteViews)
+                .setSmallIcon(R.mipmap.ic_launcher);
+        notification=builder.build();
+                notification.flags|=Notification.FLAG_AUTO_CANCEL;
+        notification.defaults|=Notification.DEFAULT_SOUND;
+        notification.defaults|=Notification.DEFAULT_VIBRATE;
+        manager=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+        manager.notify(1,notification);
+```
+
+Markdown*
 *Awesome*
