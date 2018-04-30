@@ -34,7 +34,7 @@ android:width
 
 ## 2、使用本地矢量图导入
 
-[iconfont](https://www.iconfont.cn)  下载svg矢量图
+[iconfont](www.iconfont.cn)下载svg矢量图
 
 Asset Studio选择Local File导入
 
