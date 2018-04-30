@@ -15,7 +15,7 @@ categories: AS
 
 选择文件夹右键,一般是drawable文件夹
 
-![Vector Graphics](https://cvbnt.github.io/cvbnt.github.io/assets/images/Vector Graphics/Vector Graphics.PNG)
+![Vector Asset](https://cvbnt.github.io/cvbnt.github.io/assets/images/Vector Graphics/Vector Asset.PNG)
 
 Clip Art为内置矢量图
 
