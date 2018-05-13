@@ -1,8 +1,9 @@
+
 ---
 header:  
   teaser: /assets/images/Android Studio.png  
 layout: post  
-title: Application Debug  
+title: Android Studio  
 date: 2017-12-01 09:00:00 +0800  
 categories: AS  
 search：true
@@ -68,7 +69,7 @@ search：true
 
 -da
 ```
-
+根据需求可以把-Xmx继续往上调
 2、Android Studio显示Heap占用
 
 Settings->Appearance，打开 Show memory indicator 选项
