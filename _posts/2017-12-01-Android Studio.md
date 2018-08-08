@@ -40,6 +40,7 @@ search：true
 14、设置里的Live Templates,自定义快捷键，例如：sop+Tap   
 15、shift+F6&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;重命名  
 16、ctrl+o&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;快速查找调用方法 
+17、Ctrl+Shift+加号或减号       扩展代码/隐藏代码
 
 # 配置AS识别成员变量m前缀生成get和set方法
 
